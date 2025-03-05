@@ -1,1 +1,528 @@
-/* saa */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(58, 71, 83);
+}
+
+.painel,.chao {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: rgb(19, 43, 51);
+}
+
+.chao {
+    bottom: 0;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;  /* Centraliza verticalmente */
+    padding-right: 0%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(19, 43, 51);
+    top :0%;
+    font-size: clamp(40px, 6vw, 60px);
+    color: white;
+}
+
+.botaoEmbaralha {
+    position: absolute;
+    background-color: transparent;
+    background-image: url('../src/embaralhar.png');
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    width: 15vw; /* 20% da largura da tela */
+    height: 15vw; /* Mantém o quadrado proporcional */
+    max-width: 70px; /* Define um limite */
+    max-height: 70px;
+    border: none; /* Remove borda */
+    background-size: 100%;
+    cursor: pointer;
+    z-index: 10;
+    top: 1%;
+    left: 3%;
+    filter: opacity(0.5);
+
+}
+.botaoEmbaralha:hover {
+    filter: brightness(1.1)  opacity(1); /* Aumenta o brilho ao passar o mouse */
+}
+
+
+.Botao {
+    position: absolute;
+    background-color: transparent;
+    background-image: url('seta.png');
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-position-x: 75%;
+    height: 15%; /* Altura do botão */
+    width: 15%; /* Largura do botão */
+    border: none; /* Remove borda */
+    background-size: 100% auto;
+    cursor: pointer;
+    z-index: 10;
+    filter: opacity(0.05);
+}
+.Botao:hover {
+    filter: brightness(1.5)  opacity(1); /* Aumenta o brilho ao passar o mouse */
+}
+.Botao1 {
+    left: -10%;
+    top: 5%;
+    rotate: 45deg;
+    transform: scaleX(-1);
+}
+
+.Botao2 {
+    right: 10%;
+    bottom: -10%;
+    rotate: 45deg;
+}
+
+.Botao3 {
+    left: -15%;
+    top: 30%;
+    rotate: -160deg;
+}
+
+.Botao4 {
+    right: -15%;
+    top: 15%;
+    rotate: 160deg;
+    transform: scaleX(-1);
+}
+.Botao5 {
+    right: 35%;
+    bottom: -10%;
+    rotate: -60deg;
+    transform: scaleX(-1);
+}
+
+.Botao6 {
+    right: 10%;
+    top: -5%;
+    rotate: -60deg;
+}
+
+.Botao7 {
+    left: 10%;
+    bottom: -5%;
+    rotate: -60deg;
+    transform: scaleX(-1);
+}
+
+.Botao8 {
+    right: 45%;
+    top: -10%;
+    rotate: -60deg;
+}
+
+.Botao9 {
+    left: -15%;
+    bottom: 20%;
+    rotate: -160deg;
+}
+
+.Botao10 {
+    right: -15%;
+    bottom: 30%;
+    rotate: 160deg;
+    transform: scaleX(-1);
+}
+
+.Botao11 {
+    left: 5%;
+    top: -5%;
+    rotate: 45deg;
+    transform: scaleX(-1);
+}
+
+.Botao12 {
+    right: -2%;
+    bottom: 1%;
+    rotate: 45deg;
+}
+
+.Cubo {
+    position: absolute;
+    left: 10%;
+    top :20%;
+    width: 33vw; /* 20% da largura da tela */
+    height: 33vw; /* Mantém o quadrado proporcional */
+    max-width: 500px; /* Define um limite */
+    max-height: 500px;
+}
+
+.Face1 {
+    position: absolute;
+    width: 75%;
+    height: 80%;
+    left: 0%;
+    bottom: 0%;
+}
+.Face2 {
+    position: absolute;
+    width: 25%;
+    height: 90%;
+    right: 0%;
+    bottom: 0%;
+}
+.Face3 {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    top: 0%;
+}
+
+.FormatoFace1{
+    clip-path: polygon(0% 90%,0% 0%, 100% 10%, 100% 100%);
+    width: 33.3%;
+    height: 33.3%;
+    position: absolute;
+    border: 1PX solid rgb(255, 255, 255);
+}
+
+.FormatoFace2{
+    clip-path: polygon(0% 100%,0% 20%, 100% 0%, 100% 80%);
+    width: 33.3%;
+    height: 33.3%;
+    position: absolute;
+    border: 1PX solid rgb(255, 255, 255);
+}
+
+.FormatoFace3{
+    width: 33.3%;
+    height: 66.6%;
+    position: absolute;
+    clip-path: polygon(0% 80%, 25% 35%, 100% 55%, 75% 100%);
+    border: 1PX solid rgb(255, 255, 255);
+}
+
+#A1 {
+    background-color: green;
+    left: 0%;
+    top : 0%;
+}
+/* #region saa */
+#A2 {
+    background-color: blue;
+    left: 33.3%;
+    top : 3.33%;
+}
+#A3 {
+    background-color: rgb(255, 0, 0);
+    left: 66.6%;
+    top : 6.66%;
+}
+#A4 {
+    background-color: green;
+    left: 0%;
+    top : 30%;
+    
+}
+#A5 {
+    background-color: blue;
+    left: 33.3%;
+    top : 33.3%;
+}
+#A6 {
+    background-color: rgb(255, 0, 0);
+    left: 66.6%;
+    top : 36.6%;
+}
+#A7 {
+    background-color: green;
+    left: 0%;
+    top : 60%;
+    
+}
+#A8 {
+    background-color: blue;
+    left: 33.3%;
+    top : 63.3%;
+}
+#A9 {
+    background-color: rgb(255, 0, 0);
+    left: 66.6%;
+    top : 66.6%;
+}
+
+
+#B1 {
+    background-color: rgb(0, 255, 42);
+    left: 0%;
+    bottom : 53.4%;
+}
+#B2 {
+    background-color: blue;
+    left: 33.3%;
+    bottom : 60%;
+}
+#B3 {
+    background-color: rgb(255, 0, 0);
+    left: 66.6%;
+    bottom : 66.6%;
+}
+#B4 {
+    background-color: rgb(230, 0, 230);
+    left: 0%;
+    bottom : 26.6%;
+}
+#B5 {
+    background-color: rgb(0, 255, 42);
+    left: 33.3%;
+    bottom : 33.2%;
+}
+#B6 {
+    background-color: blue;
+    left: 66.6%;;
+    bottom : 39.8%;
+}
+#B7 {
+    background-color: rgb(255, 0, 0);
+    left: 0%;
+    bottom : 0%;
+}
+#B8 {
+    background-color: rgb(230, 0, 230);
+    left: 33.3%;
+    bottom : 6.6%;
+}
+#B9 {
+    background-color: rgb(0, 255, 42);
+    left: 66.6%;
+    bottom : 13.2%;
+}
+
+
+#E1 {
+    background-color: rgb(0, 247, 255);
+    left: 16.6%;
+    bottom : 45.9%;
+}
+#E2 {
+    background-color: pink;
+    left: 41.6%;
+    bottom : 32.6%;
+}
+#E3 {
+    background-color: brown;
+    left: 66.6%;
+    bottom : 19.3%;
+}
+#E4 {
+    background-color: gold;
+    left: 8.3%;
+    bottom : 16.3%;
+}
+#E5 {
+    background-color: rgb(0, 247, 255);
+    left: 33.3%;
+    bottom : 3.6%;
+}
+#E6 {
+    background-color: pink;
+    left: 58.3%;
+    bottom : -9.9%;
+}
+#E7 {
+    background-color: brown;
+    left: 0%;
+    bottom : -13.3%;
+}
+#E8 {
+    background-color: gold;
+    left: 25%;
+    bottom : -26.6%;
+}
+#E9 {
+    background-color: rgb(0, 247, 255);
+    left: 50%;
+    bottom : -39.9%;
+}
+/* #endregion saa */
+
+.Cubo2 {
+    position: absolute;
+    width: 33vw; /* 20% da largura da tela */
+    height: 33vw; /* Mantém o quadrado proporcional */
+    max-width: 500px; /* Define um limite */
+    max-height: 500px;
+    left: 60%;
+    top :20%;
+
+}
+
+/* .Face4 {
+    position: absolute;
+    width: 75%;
+    height: 80%;
+    left: 0%;
+    bottom: 0%;
+}
+.Face5 {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    top: 0%;
+    
+}
+.Face6 {
+    position: absolute;
+    width: 25%;
+    height: 90%;
+    right: 0%;
+    bottom: 0%;
+} */
+
+/* #region Faces do Cubo2 */
+#C1 {
+    background-color: green;
+    left: 0%;
+    top : 0%;
+}
+#C2 {
+    background-color: blue;
+    left: 33.3%;
+    top : 3.33%;
+}
+#C3 {
+    background-color: rgb(255, 0, 0);
+    left: 66.6%;
+    top : 6.66%;
+}
+#C4 {
+    background-color: green;
+    left: 0%;
+    top : 30%;
+    
+}
+#C5 {
+    background-color: blue;
+    left: 33.3%;
+    top : 33.3%;
+}
+#C6 {
+    background-color: rgb(255, 0, 0);
+    left: 66.6%;
+    top : 36.6%;
+}
+#C7 {
+    background-color: green;
+    left: 0%;
+    top : 60%;
+    
+}
+#C8 {
+    background-color: blue;
+    left: 33.3%;
+    top : 63.3%;
+}
+#C9 {
+    background-color: rgb(255, 0, 0);
+    left: 66.6%;
+    top : 66.6%;
+}
+
+
+
+#D1 {
+    background-color: rgb(0, 255, 42);
+    left: 0%;
+    bottom : 53.4%;
+}
+#D2 {
+    background-color: blue;
+    left: 33.3%;
+    bottom : 60%;
+}
+#D3 {
+    background-color: rgb(255, 0, 0);
+    left: 66.6%;
+    bottom : 66.6%;
+}
+#D4 {
+    background-color: rgb(230, 0, 230);
+    left: 0%;
+    bottom : 26.6%;
+}
+#D5 {
+    background-color: rgb(0, 255, 42);
+    left: 33.3%;
+    bottom : 33.2%;
+}
+#D6 {
+    background-color: blue;
+    left: 66.6%;;
+    bottom : 39.8%;
+}
+#D7 {
+    background-color: rgb(255, 0, 0);
+    left: 0%;
+    bottom : 0%;
+}
+#D8 {
+    background-color: rgb(230, 0, 230);
+    left: 33.3%;
+    bottom : 6.6%;
+}
+#D9 {
+    background-color: rgb(0, 255, 42);
+    left: 66.6%;
+    bottom : 13.2%;
+}
+
+
+#F1 {
+    background-color: rgb(0, 247, 255);
+    left: 16.6%;
+    bottom : 45.9%;
+}
+#F2 {
+    background-color: pink;
+    left: 41.6%;
+    bottom : 32.6%;
+}
+#F3 {
+    background-color: brown;
+    left: 66.6%;
+    bottom : 19.3%;
+}
+#F4 {
+    background-color: gold;
+    left: 8.3%;
+    bottom : 16.3%;
+}
+#F5 {
+    background-color: rgb(0, 247, 255);
+    left: 33.3%;
+    bottom : 3.6%;
+}
+#F6 {
+    background-color: pink;
+    left: 58.3%;
+    bottom : -9.9%;
+}
+#F7 {
+    background-color: brown;
+    left: 0%;
+    bottom : -13.3%;
+}
+#F8 {
+    background-color: gold;
+    left: 25%;
+    bottom : -26.6%;
+}
+#F9 {
+    background-color: rgb(0, 247, 255);
+    left: 50%;
+    bottom : -39.9%;
+}
+/* #endregion Faces do Cubo2 */

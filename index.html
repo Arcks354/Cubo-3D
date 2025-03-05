@@ -3,9 +3,131 @@
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link rel="stylesheet" href="./src/style.css">
+    <script src="./src/script.js" defer></script>
+
+    <title>Cubo Mágico 3D</title>
  </head>
  <body>
-    
+    <div class="painel">
+        <button class="botaoEmbaralha" onclick="embaralha()"></button>
+        <h1 class="titulo">Cubo Mágico</h1>
+    </div>
+
+    <div class="Cubo">
+        <!-- primeiro parametro é sentido do giro(horario anti horario)/ do 2° ao 5° parametro é as facinhas da face principal/ da 6° em diante é as faces laterais -->
+        <button class="Botao Botao1" onclick="comandoCor(0, 1)">TESTE</button>
+        <button class="Botao Botao2" onclick="comandoCor(1, 1)"></button>
+        
+        <button class="Botao Botao3" onclick="comandoCor(0, 2)"></button>
+        <button class="Botao Botao4" onclick="comandoCor(1, 2)"></button>
+        
+        <button class="Botao Botao5" onclick="comandoCor(0, 3)"></button>
+        <button class="Botao Botao6" onclick="comandoCor(1, 3)"></button>
+        
+        <button class="Botao Botao7" onclick="comandoCor(0, 4)"></button>
+        <button class="Botao Botao8" onclick="comandoCor(1, 4)"></button>
+        
+        <button class="Botao Botao9" onclick="comandoCor(0, 5)"></button>
+        <button class="Botao Botao10" onclick="comandoCor(1, 5)"></button>
+        
+        <button class="Botao Botao11" onclick="comandoCor(0, 6)"></button>
+        <button class="Botao Botao12" onclick="comandoCor(1, 6)"></button>
+        
+        <div class="Face1">
+            <div id="A1" class="FormatoFace1"></div>
+            <div id="A2" class="FormatoFace1"></div>
+            <div id="A3" class="FormatoFace1"></div>
+            <div id="A4" class="FormatoFace1"></div>
+            <div id="A5" class="FormatoFace1"></div>
+            <div id="A6" class="FormatoFace1"></div>
+            <div id="A7" class="FormatoFace1"></div>
+            <div id="A8" class="FormatoFace1"></div>
+            <div id="A9" class="FormatoFace1"></div>
+        </div>
+        <div class="Face2">
+            <div id="B1" class="FormatoFace2"></div>
+            <div id="B2" class="FormatoFace2"></div>
+            <div id="B3" class="FormatoFace2"></div>
+            <div id="B4" class="FormatoFace2"></div>
+            <div id="B5" class="FormatoFace2"></div>
+            <div id="B6" class="FormatoFace2"></div>
+            <div id="B7" class="FormatoFace2"></div>
+            <div id="B8" class="FormatoFace2"></div>
+            <div id="B9" class="FormatoFace2"></div>
+        </div>
+        <div class="Face3">
+            <div id="E1" class="FormatoFace3"></div>
+            <div id="E2" class="FormatoFace3"></div>
+            <div id="E3" class="FormatoFace3"></div>
+            <div id="E4" class="FormatoFace3"></div>
+            <div id="E5" class="FormatoFace3"></div>
+            <div id="E6" class="FormatoFace3"></div>
+            <div id="E7" class="FormatoFace3"></div>
+            <div id="E8" class="FormatoFace3"></div>
+            <div id="E9" class="FormatoFace3"></div>
+        </div>
+
+    </div>
+    <div class="Cubo2">
+        <!-- primeiro parametro é sentido do giro(horario anti horario)/ do 2° ao 5° parametro é as facinhas da face principal/ da 6° em diante é as faces laterais -->
+        <button class="Botao Botao1" onclick="comandoCor(0, 1)"></button>
+        <button class="Botao Botao2" onclick="comandoCor(1, 1)"></button>
+        
+        <button class="Botao Botao3" onclick="comandoCor(0, 2)"></button>
+        <button class="Botao Botao4" onclick="comandoCor(1, 2)"></button>
+        
+        <button class="Botao Botao5" onclick="comandoCor(0, 3)"></button>
+        <button class="Botao Botao6" onclick="comandoCor(1, 3)"></button>
+        
+        <button class="Botao Botao7" onclick="comandoCor(0, 4)"></button>
+        <button class="Botao Botao8" onclick="comandoCor(1, 4)"></button>
+        
+        <button class="Botao Botao9" onclick="comandoCor(0, 5)"></button>
+        <button class="Botao Botao10" onclick="comandoCor(1, 5)"></button>
+        
+        <button class="Botao Botao11" onclick="comandoCor(0, 6)"></button>
+        <button class="Botao Botao12" onclick="comandoCor(1, 6)"></button>
+        
+        <div class="Face1">
+            <div id="C1" class="FormatoFace1"></div>
+            <div id="C2" class="FormatoFace1"></div>
+            <div id="C3" class="FormatoFace1"></div>
+            <div id="C4" class="FormatoFace1"></div>
+            <div id="C5" class="FormatoFace1"></div>
+            <div id="C6" class="FormatoFace1"></div>
+            <div id="C7" class="FormatoFace1"></div>
+            <div id="C8" class="FormatoFace1"></div>
+            <div id="C9" class="FormatoFace1"></div>
+        </div>
+        <div class="Face2">
+            <div id="D1" class="FormatoFace2"></div>
+            <div id="D2" class="FormatoFace2"></div>
+            <div id="D3" class="FormatoFace2"></div>
+            <div id="D4" class="FormatoFace2"></div>
+            <div id="D5" class="FormatoFace2"></div>
+            <div id="D6" class="FormatoFace2"></div>
+            <div id="D7" class="FormatoFace2"></div>
+            <div id="D8" class="FormatoFace2"></div>
+            <div id="D9" class="FormatoFace2"></div>
+        </div>
+        <div class="Face3">
+            <div id="F1" class="FormatoFace3"></div>
+            <div id="F2" class="FormatoFace3"></div>
+            <div id="F3" class="FormatoFace3"></div>
+            <div id="F4" class="FormatoFace3"></div>
+            <div id="F5" class="FormatoFace3"></div>
+            <div id="F6" class="FormatoFace3"></div>
+            <div id="F7" class="FormatoFace3"></div>
+            <div id="F8" class="FormatoFace3"></div>
+            <div id="F9" class="FormatoFace3"></div>
+        </div>
+
+    </div>
+
+
+    <div class="chao">
+    </div>
  </body>
  </html>
