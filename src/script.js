@@ -23,7 +23,7 @@ for (let i = 0; i < 6; i++) {  // i<6 porque são 6 lados do cubo
                 }
                 else{
                     if (i==3) {
-                        elemento.style.backgroundColor = 'white';
+                        elemento.style.backgroundColor = 'ORANGE';
                     }
                     else{
                         if (i==4) {
@@ -31,7 +31,7 @@ for (let i = 0; i < 6; i++) {  // i<6 porque são 6 lados do cubo
                         }
                         else{
                             if (i==5) {
-                                elemento.style.backgroundColor = 'orange';
+                                elemento.style.backgroundColor = 'BLACK';
                             }
                             else{
                                 console.log('Erro ao setar as cores');
@@ -44,24 +44,36 @@ for (let i = 0; i < 6; i++) {  // i<6 porque são 6 lados do cubo
     }
 }
 // #endregion Define Cor das faces
-
+//#region função que chama as mudanças de cor de acordo com parametro que recebe
 function comandoCor(direcao, comando) { //comando varia entre as 6 faces
-    //console.log(comando);
-    if (comando == 1) { mudarCor(direcao, 'A1','A2','A3','A4','A5','A6','A7','A8','A9') 
-        console.log('comando1');
-
-     }
+    let som = new Audio("../src/click.mp3");
+    som.play();
+    if (comando == 'A') { mudarCorLado(direcao, 'A1','A2','A3','A4','A6','A7','A8','A9')
+        mudarCorFaceLateral(direcao, 'B1','B4','B7','F1','F4','F7','C1','C4','C7','E7','E8','E9') }
     else {
-        if (comando == 2) { mudarCor(direcao, 12345) }
+        if (comando == 'B') { mudarCorLado(direcao, 'B1','B2','B3','B4','B6','B7','B8','B9')
+            mudarCorFaceLateral(direcao, 'A9','A6','A3','E9','E6','E3','D9','D6','D3','F3','F2','F1')  }
         else {
-            if (comando == 3) { mudarCor(direcao, 12345) }
+            if (comando == 'E') { mudarCorLado(!direcao, 'E1','E2','E3','E4','E6','E7','E8','E9')
+                mudarCorFaceLateral(direcao, 'A1','A2','A3','B1','B2','B3','D9','D8','D7','C9','C8','C7')   }
             else {
-                if (comando == 4) { mudarCor(direcao, 12345) }
+                if (comando == 'D') { mudarCorLado(!direcao, 'D1','D2','D3','D4','D6','D7','D8','D9')
+                    mudarCorFaceLateral(direcao, 'B3','B6','B9','F3','F6','F9','C3','C6','C9','E1','E2','E3')  }
                 else {
-                    if (comando == 5) { mudarCor(direcao, 12345) }
+                    if (comando == 'C') { mudarCorLado(!direcao, 'C1','C2','C3','C4','C6','C7','C8','C9')
+                        mudarCorFaceLateral(direcao, 'A7','A4','A1','E7','E4','E1','D7','D4','D1','F9','F8','F7')  }
                     else {
-                        if (comando == 6) { mudarCor(direcao, 12345) }
-                        else { console.log(comando); }
+                        if (comando == 'F') { mudarCorLado(direcao, 'F1','F2','F3','F4','F6','F7','F8','F9')
+                            mudarCorFaceLateral(direcao, 'A7','A8','A9','B7','B8','B9','D3','D2','D1','C3','C2','C1')  }
+                        else {
+                            if (comando == 'G') {mudarCorFaceLateral(direcao, 'B2','B5','B8','F2','F5','F8','C2','C5','C8','E4','E5','E6')  }
+                            else { 
+                                if (comando == 'H') {mudarCorFaceLateral(direcao, 'A8','A5','A2','E8','E5','E2','D8','D5','D2','F6','F5','F4')  }
+                                else { 
+                                    if (comando == 'I') {mudarCorFaceLateral(direcao, 'A4','A5','A6','B4','B5','B6','D6','D5','D4','C6','C5','C4')  }
+                                } 
+                            } 
+                        }
                     }
                 }
             }
@@ -69,80 +81,90 @@ function comandoCor(direcao, comando) { //comando varia entre as 6 faces
     }
 
 }
-
-//funcão mudarCor é chamada através da função comandoCor, ela recebe as faces que irão mover e faz o processo de troca
-function mudarCor(sentido, copinh1, copinh2, copinh3, copinh4, copinh5, copinh6, copinh7, copinh8, copinh9) {
-//, caneca1, caneca2, caneca3, caneca4, caneca5, caneca6, caneca7, caneca8, caneca9, caneca10, caneca11, caneca12
-    var copinho1 = document.getElementById(copinh1);
-    var copinho2 = document.getElementById(copinh2);
-    var copinho3 = document.getElementById(copinh3);
-    var copinho4 = document.getElementById(copinh4);
-    var copinho5 = document.getElementById(copinh5);
-    var copinho6 = document.getElementById(copinh6);
-    var copinho7 = document.getElementById(copinh7);
-    var copinho8 = document.getElementById(copinh8);
-    var copinho9 = document.getElementById(copinh9);
-
-    // var caneco1 = document.getElementById(caneca1);
-    // var caneco2 = document.getElementById(caneca2);
-    // var caneco3 = document.getElementById(caneca3);
-    // var caneco4 = document.getElementById(caneca4);
-    // var caneco5 = document.getElementById(caneca5);
-    // var caneco6 = document.getElementById(caneca6);
-    // var caneco7 = document.getElementById(caneca7);
-    // var caneco8 = document.getElementById(caneca8);
-    // var caneco9 = document.getElementById(caneca9);
-    // var caneco10 = document.getElementById(caneca10);
-    // var caneco11 = document.getElementById(caneca11);
-    // var caneco12 = document.getElementById(caneca12);
-
-    var copo = copinho1.style.backgroundColor;
-    //var caneco = caneco1.style.backgroundColor;
+//#endregion função que chama as mudanças de cor de acordo com parametro que recebe
+function mudarCorLado(sentido, vaso1, vaso2, vaso3, vaso4, vaso6, vaso7, vaso8, vaso9) {
+        var face1 = document.getElementById(vaso1);
+        var face2 = document.getElementById(vaso2);
+        var face3 = document.getElementById(vaso3);
+        var face4 = document.getElementById(vaso4);
+        var face6 = document.getElementById(vaso6);
+        var face7 = document.getElementById(vaso7);
+        var face8 = document.getElementById(vaso8);
+        var face9 = document.getElementById(vaso9);
+    
+        var copo = face1.style.backgroundColor;
+        if (sentido) {
+            face1.style.backgroundColor = face7.style.backgroundColor;
+            face7.style.backgroundColor = face9.style.backgroundColor;
+            face9.style.backgroundColor = face3.style.backgroundColor;
+            face3.style.backgroundColor = copo;
+            copo = face2.style.backgroundColor;
+            face2.style.backgroundColor = face4.style.backgroundColor;
+            face4.style.backgroundColor = face8.style.backgroundColor;
+            face8.style.backgroundColor = face6.style.backgroundColor;
+            face6.style.backgroundColor = copo;
+        }
+        else {
+            face1.style.backgroundColor = face3.style.backgroundColor;
+            face3.style.backgroundColor = face9.style.backgroundColor;
+            face9.style.backgroundColor = face7.style.backgroundColor;
+            face7.style.backgroundColor = copo;
+            copo = face2.style.backgroundColor;
+            face2.style.backgroundColor = face6.style.backgroundColor;
+            face6.style.backgroundColor = face8.style.backgroundColor;
+            face8.style.backgroundColor = face4.style.backgroundColor;
+            face4.style.backgroundColor = copo;
+        }
+    
+}
+function mudarCorFaceLateral(sentido, fac1, fac2, fac3, fac4, fac5, fac6, fac7, fac8, fac9, fac10, fac11, fac12) {
+    var fasse1 = document.getElementById(fac1);
+    var fasse2 = document.getElementById(fac2);
+    var fasse3 = document.getElementById(fac3);
+    var fasse4 = document.getElementById(fac4);
+    var fasse5 = document.getElementById(fac5);
+    var fasse6 = document.getElementById(fac6);
+    var fasse7 = document.getElementById(fac7);
+    var fasse8 = document.getElementById(fac8);
+    var fasse9 = document.getElementById(fac9);
+    var fasse10 = document.getElementById(fac10);
+    var fasse11 = document.getElementById(fac11);
+    var fasse12 = document.getElementById(fac12);
+    var fasse = fasse1.style.backgroundColor;
 
     if (sentido) {
-        copinho1.style.backgroundColor = copinho3.style.backgroundColor;
-        copinho3.style.backgroundColor = copinho4.style.backgroundColor;
-        copinho4.style.backgroundColor = copinho2.style.backgroundColor;
-        copinho2.style.backgroundColor = copo;
-        // diferente daki pra frente
-        caneco1.style.backgroundColor = caneco7.style.backgroundColor;
-        caneco7.style.backgroundColor = caneco5.style.backgroundColor;
-        caneco5.style.backgroundColor = caneco3.style.backgroundColor;
-        caneco3.style.backgroundColor = caneco;
-        caneco = caneco2.style.backgroundColor;
-        caneco2.style.backgroundColor = caneco8.style.backgroundColor;
-        caneco8.style.backgroundColor = caneco6.style.backgroundColor;
-        caneco6.style.backgroundColor = caneco4.style.backgroundColor;
-        caneco4.style.backgroundColor = caneco;
+        fasse1.style.backgroundColor = fasse10.style.backgroundColor;
+        fasse10.style.backgroundColor = fasse7.style.backgroundColor;
+        fasse7.style.backgroundColor = fasse4.style.backgroundColor;
+        fasse4.style.backgroundColor = fasse;
+        fasse = fasse2.style.backgroundColor;
+        fasse2.style.backgroundColor = fasse11.style.backgroundColor;
+        fasse11.style.backgroundColor = fasse8.style.backgroundColor;
+        fasse8.style.backgroundColor = fasse5.style.backgroundColor;
+        fasse5.style.backgroundColor = fasse;
+        fasse = fasse3.style.backgroundColor;
+        fasse3.style.backgroundColor = fasse12.style.backgroundColor;
+        fasse12.style.backgroundColor = fasse9.style.backgroundColor;
+        fasse9.style.backgroundColor = fasse6.style.backgroundColor;
+        fasse6.style.backgroundColor = fasse;
     }
     else {
-        copinho1.style.backgroundColor = copinho3.style.backgroundColor;
-        copinho3.style.backgroundColor = copinho9.style.backgroundColor;
-        copinho9.style.backgroundColor = copinho7.style.backgroundColor;
-        copinho7.style.backgroundColor = copo;
-        copo = copinho2.style.backgroundColor;
-        copinho2.style.backgroundColor = copinho6.style.backgroundColor;
-        copinho6.style.backgroundColor = copinho8.style.backgroundColor;
-        copinho8.style.backgroundColor = copinho4.style.backgroundColor;
-        copinho4.style.backgroundColor = copo;
-        // diferente daki pra frente
-        // caneco1.style.backgroundColor = caneco3.style.backgroundColor;
-        // caneco3.style.backgroundColor = caneco5.style.backgroundColor;
-        // caneco5.style.backgroundColor = caneco7.style.backgroundColor;
-        // caneco7.style.backgroundColor = caneco;
-        // caneco = caneco2.style.backgroundColor;
-        // caneco2.style.backgroundColor = caneco4.style.backgroundColor;
-        // caneco4.style.backgroundColor = caneco6.style.backgroundColor;
-        // caneco6.style.backgroundColor = caneco8.style.backgroundColor;
-        // caneco8.style.backgroundColor = caneco;
-
+        fasse1.style.backgroundColor = fasse4.style.backgroundColor;
+        fasse4.style.backgroundColor = fasse7.style.backgroundColor;
+        fasse7.style.backgroundColor = fasse10.style.backgroundColor;
+        fasse10.style.backgroundColor = fasse;
+        fasse = fasse2.style.backgroundColor;
+        fasse2.style.backgroundColor = fasse5.style.backgroundColor;
+        fasse5.style.backgroundColor = fasse8.style.backgroundColor;
+        fasse8.style.backgroundColor = fasse11.style.backgroundColor;
+        fasse11.style.backgroundColor = fasse;
+        fasse = fasse3.style.backgroundColor;
+        fasse3.style.backgroundColor = fasse6.style.backgroundColor;
+        fasse6.style.backgroundColor = fasse9.style.backgroundColor;
+        fasse9.style.backgroundColor = fasse12.style.backgroundColor;
+        fasse12.style.backgroundColor = fasse;
     }
-
-    let som = new Audio("../src/click.mp3"); // Substitua pelo caminho correto do seu arquivo
-    som.play();
-    // console.log(copinho.style.backgroundColor);
 }
-
 
 function esperar(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));

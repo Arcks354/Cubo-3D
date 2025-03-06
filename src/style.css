@@ -205,12 +205,12 @@ body {
     border: 1PX solid rgb(255, 255, 255);
 }
 
+/* #region saa */
 #A1 {
     background-color: green;
     left: 0%;
     top : 0%;
 }
-/* #region saa */
 #A2 {
     background-color: blue;
     left: 33.3%;
@@ -430,8 +430,6 @@ body {
     left: 66.6%;
     top : 66.6%;
 }
-
-
 
 #D1 {
     background-color: rgb(0, 255, 42);
