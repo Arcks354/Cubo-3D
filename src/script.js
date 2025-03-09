@@ -44,33 +44,32 @@ for (let i = 0; i < 6; i++) {  // i<6 porque são 6 lados do cubo
     }
 }
 // #endregion Define Cor das faces
-//#region função que chama as mudanças de cor de acordo com parametro que recebe
 function comandoCor(direcao, comando) { //comando varia entre as 6 faces
     let som = new Audio("../src/click.mp3");
     som.play();
     if (comando == 'A') { mudarCorLado(direcao, 'A1','A2','A3','A4','A6','A7','A8','A9')
-        mudarCorFaceLateral(direcao, 'B1','B4','B7','F1','F4','F7','C1','C4','C7','E7','E8','E9') }
+        mudarCorFaceLateral(direcao, 'B1','B4','B7','F1','F2','F3','C3','C6','C9','E7','E8','E9') }
     else {
         if (comando == 'B') { mudarCorLado(direcao, 'B1','B2','B3','B4','B6','B7','B8','B9')
-            mudarCorFaceLateral(direcao, 'A9','A6','A3','E9','E6','E3','D9','D6','D3','F3','F2','F1')  }
+            mudarCorFaceLateral(direcao, 'A9','A6','A3','E9','E6','E3','D7','D4','D1','F7','F4','F1')  }
         else {
             if (comando == 'E') { mudarCorLado(!direcao, 'E1','E2','E3','E4','E6','E7','E8','E9')
-                mudarCorFaceLateral(direcao, 'A1','A2','A3','B1','B2','B3','D9','D8','D7','C9','C8','C7')   }
+                mudarCorFaceLateral(direcao, 'A1','A2','A3','B1','B2','B3','D7','D8','D9','C7','C8','C9')   }
             else {
-                if (comando == 'D') { mudarCorLado(!direcao, 'D1','D2','D3','D4','D6','D7','D8','D9')
-                    mudarCorFaceLateral(direcao, 'B3','B6','B9','F3','F6','F9','C3','C6','C9','E1','E2','E3')  }
+                if (comando == 'D') { mudarCorLado(direcao, 'D1','D2','D3','D4','D6','D7','D8','D9')
+                    mudarCorFaceLateral(direcao, 'B3','B6','B9','F7','F8','F9','C1','C4','C7','E1','E2','E3')  }
                 else {
-                    if (comando == 'C') { mudarCorLado(!direcao, 'C1','C2','C3','C4','C6','C7','C8','C9')
-                        mudarCorFaceLateral(direcao, 'A7','A4','A1','E7','E4','E1','D7','D4','D1','F9','F8','F7')  }
+                    if (comando == 'C') { mudarCorLado(direcao, 'C1','C2','C3','C4','C6','C7','C8','C9')
+                        mudarCorFaceLateral(!direcao, 'A1','A4','A7','F3','F6','F9','D3','D6','D9','E1','E4','E7')  }
                     else {
-                        if (comando == 'F') { mudarCorLado(direcao, 'F1','F2','F3','F4','F6','F7','F8','F9')
-                            mudarCorFaceLateral(direcao, 'A7','A8','A9','B7','B8','B9','D3','D2','D1','C3','C2','C1')  }
+                        if (comando == 'F') { mudarCorLado(!direcao, 'F1','F2','F3','F4','F6','F7','F8','F9')
+                            mudarCorFaceLateral(direcao, 'A7','A8','A9','B7','B8','B9','D1','D2','D3','C1','C2','C3')  }
                         else {
-                            if (comando == 'G') {mudarCorFaceLateral(direcao, 'B2','B5','B8','F2','F5','F8','C2','C5','C8','E4','E5','E6')  }
+                            if (comando == 'G') {mudarCorFaceLateral(direcao, 'B2','B5','B8','F4','F5','F6','C2','C5','C8','E4','E5','E6')  }
                             else { 
-                                if (comando == 'H') {mudarCorFaceLateral(direcao, 'A8','A5','A2','E8','E5','E2','D8','D5','D2','F6','F5','F4')  }
+                                if (comando == 'H') {mudarCorFaceLateral(direcao, 'A8','A5','A2','E8','E5','E2','D8','D5','D2','F8','F5','F2')  }
                                 else { 
-                                    if (comando == 'I') {mudarCorFaceLateral(direcao, 'A4','A5','A6','B4','B5','B6','D6','D5','D4','C6','C5','C4')  }
+                                    if (comando == 'I') {mudarCorFaceLateral(direcao, 'A4','A5','A6','B4','B5','B6','D4','D5','D6','C4','C5','C6')  }
                                 } 
                             } 
                         }
@@ -79,9 +78,8 @@ function comandoCor(direcao, comando) { //comando varia entre as 6 faces
             }
         }
     }
-
+// VERIFICAR CORNO()
 }
-//#endregion função que chama as mudanças de cor de acordo com parametro que recebe
 function mudarCorLado(sentido, vaso1, vaso2, vaso3, vaso4, vaso6, vaso7, vaso8, vaso9) {
         var face1 = document.getElementById(vaso1);
         var face2 = document.getElementById(vaso2);
