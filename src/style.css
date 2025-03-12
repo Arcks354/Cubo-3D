@@ -31,7 +31,7 @@ body {
     background-color: rgb(59, 94, 105);
     top :5%;
     left: 3%;
-    font-size: clamp(40px, 6vw, 60px);
+    font-size: clamp(30px, 6vw, 60px);
     color: white;
     border-radius: 25px;
 }
