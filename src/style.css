@@ -11,7 +11,7 @@ body {
 .painel,.chao {
     position: absolute;
     width: 100%;
-    height: 10%;
+    height: 5%;
     background-color: rgb(19, 43, 51);
 }
 
@@ -24,16 +24,19 @@ body {
     justify-content: center;  /* Centraliza horizontalmente */
     align-items: center;  /* Centraliza verticalmente */
     padding-right: 0%;
+    padding-bottom: 30%;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(19, 43, 51);
-    top :0%;
+    width: 94%;
+    height: 90%;
+    background-color: rgb(59, 94, 105);
+    top :5%;
+    left: 3%;
     font-size: clamp(40px, 6vw, 60px);
     color: white;
+    border-radius: 25px;
 }
 
-.teste {
+.banner {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -41,17 +44,31 @@ body {
     z-index: 11;
 }
 
-.testeNone {
+.bannerNone {
     display: none;
 }
 
-.menuTeste {
+.menu {
     height: 50%;
     width: 50%;
     position: absolute;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(138, 165, 196);
     left: 25%;
     top: 20%;
+    border-radius: 25px;
+}
+
+.botasEmbaralha {
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;  /* Centraliza verticalmente */
+    padding-right: 0%;
+    padding-top: 15%;
+    position: absolute;
+    width: 94%;
+    height: 90%;
+    top :5%;
+    left: 3%;
 }
 
 .botaoEmbaralha {
@@ -59,16 +76,14 @@ body {
     background-color: transparent;
     background-image: url('../src/embaralhar.png');
     background-repeat: no-repeat; /* Impede que a imagem se repita */
-    width: 15vw; /* 20% da largura da tela */
-    height: 15vw; /* Mantém o quadrado proporcional */
-    max-width: 70px; /* Define um limite */
-    max-height: 70px;
+    width: 10vw; /* 20% da largura da tela */
+    height: 10vw; /* Mantém o quadrado proporcional */
+    max-width: 120px; /* Define um limite */
+    max-height: 120px;
     border: none; /* Remove borda */
     background-size: 100%;
     cursor: pointer;
     z-index: 10;
-    top: 1%;
-    left: 3%;
     filter: opacity(0.5);
 
 }
@@ -95,90 +110,133 @@ body {
     filter: brightness(1.5)  opacity(1); /* Aumenta o brilho ao passar o mouse */
 }
 .Botao1 {
-    left: -10%;
-    top: 5%;
+    left: -13%;
+    top: 10%;
     rotate: 45deg;
     transform: scaleX(-1);
 }
 
 .Botao2 {
-    right: 10%;
-    bottom: -10%;
+    right: 13%;
+    bottom: -12%;
     rotate: 45deg;
 }
 
 .Botao3 {
     left: -15%;
-    top: 30%;
+    top: 23%;
     rotate: -160deg;
 }
 
 .Botao4 {
     right: -15%;
-    top: 15%;
+    top: 10%;
     rotate: 160deg;
     transform: scaleX(-1);
 }
 .Botao5 {
-    right: 35%;
-    bottom: -10%;
+    right: 29%;
+    bottom: -13%;
     rotate: -60deg;
     transform: scaleX(-1);
 }
 
 .Botao6 {
-    right: 10%;
+    right: 2%;
     top: -5%;
     rotate: -60deg;
 }
 
 .Botao7 {
-    left: 10%;
-    bottom: -5%;
+    left: 5%;
+    bottom: -10%;
     rotate: -60deg;
     transform: scaleX(-1);
 }
 
 .Botao8 {
-    right: 45%;
+    right: 53%;
     top: -10%;
     rotate: -60deg;
 }
 
 .Botao9 {
     left: -15%;
-    bottom: 20%;
+    bottom: 15%;
     rotate: -160deg;
 }
 
 .Botao10 {
     right: -15%;
-    bottom: 30%;
+    bottom: 25%;
     rotate: 160deg;
     transform: scaleX(-1);
 }
 
 .Botao11 {
-    left: 5%;
-    top: -5%;
+    left: 7%;
+    top: -7%;
     rotate: 45deg;
     transform: scaleX(-1);
 }
 
 .Botao12 {
-    right: -2%;
+    right: -5%;
     bottom: 1%;
     rotate: 45deg;
+}
+
+.Botao13 {
+    left: -4%;
+    top: 1%;
+    rotate: 45deg;
+    transform: scaleX(-1);
+}
+.Botao14 {
+    right: 4%;
+    bottom: -5%;
+    rotate: 45deg;
+}
+.Botao15 {
+    left: 31%;
+    bottom: -12%;
+    rotate: -60deg;
+    transform: scaleX(-1);
+}
+.Botao16 {
+    right: 28%;
+    top: -8%;
+    rotate: -60deg;
+}
+.Botao17 {
+    left: -15%;
+    bottom: 38%;
+    rotate: -160deg;
+}
+.Botao18 {
+    right: -15%;
+    top: 35%;
+    rotate: 160deg;
+    transform: scaleX(-1);
 }
 
 .Cubo {
     position: absolute;
     left: 10%;
     top :20%;
-    width: 33vw; /* 20% da largura da tela */
-    height: 33vw; /* Mantém o quadrado proporcional */
+    width: 40vw; /* 20% da largura da tela */
+    height: 40vw; /* Mantém o quadrado proporcional */
     max-width: 500px; /* Define um limite */
     max-height: 500px;
+}
+.CuboVertical {
+    position: absolute;
+    left: 35%;
+    top :10%;
+    width: 40vw; /* 20% da largura da tela */
+    height: 40vw; /* Mantém o quadrado proporcional */
+    max-width: 300px; /* Define um limite */
+    max-height: 300px;
 }
 
 .Face1 {
@@ -372,12 +430,23 @@ body {
 
 .Cubo2 {
     position: absolute;
-    width: 33vw; /* 20% da largura da tela */
-    height: 33vw; /* Mantém o quadrado proporcional */
+    width: 40vw; /* 20% da largura da tela */
+    height: 40vw; /* Mantém o quadrado proporcional */
     max-width: 500px; /* Define um limite */
     max-height: 500px;
     left: 60%;
     top :25%;
+    /* rotate: 180deg; */
+    transform: scaleY(-1);
+}
+.Cubo2Vertical {
+    position: absolute;
+    width: 40vw; /* 20% da largura da tela */
+    height: 40vw; /* Mantém o quadrado proporcional */
+    max-width: 300px; /* Define um limite */
+    max-height: 300px;
+    left: 35%;
+    bottom :10%;
     /* rotate: 180deg; */
     transform: scaleY(-1);
 }

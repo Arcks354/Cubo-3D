@@ -7,46 +7,48 @@
     <link rel="stylesheet" href="./src/style.css">
     <script src="./src/script.js" defer></script>
 
-    <title>Cubo Mágico 3D</title>
+    
  </head>
  <body>
-    <div class="painel">
-        <button class="botaoEmbaralha" onclick="comandoCor(0, 'G')" ></button>
+    <div class="painel"></div>
+    <!-- bannerNone VVV para sumir o banner -->
+    <div id="bannerId" class="banner">
+        <div class="menu">
+            <div class="botasEmbaralha">
+                <button class="botaoEmbaralha" onclick="embaralha(); tela();" ></button>
+            </div>
         <h1 class="titulo">Cubo Mágico</h1>
-    </div>
-    
-    <div class="teste testeNone">
-        <div class="menuTeste"></div>
+        </div>
     </div>
 
-    <div class="Cubo">
+    <div id="Cubo" class="Cubo">
         <!-- primeiro parametro é sentido do giro(horario anti horario)/ do 2° ao 5° parametro é as facinhas da face principal/ da 6° em diante é as faces laterais -->
-        <button class="Botao Botao1" onclick="comandoCor(0, 'A')">A</button>
-        <button class="Botao Botao2" onclick="comandoCor(1, 'A')">A</button>
+        <button class="Botao Botao1" onclick="comandoCor(0, 'A');verificaVitoria();">A</button>
+        <button class="Botao Botao2" onclick="comandoCor(1, 'A');verificaVitoria();">A</button>
         
-        <button class="Botao Botao3" onclick="comandoCor(0, 'E')">E</button>
-        <button class="Botao Botao4" onclick="comandoCor(1, 'E')">E</button>
+        <button class="Botao Botao3" onclick="comandoCor(0, 'E');verificaVitoria();">E</button>
+        <button class="Botao Botao4" onclick="comandoCor(1, 'E');verificaVitoria();">E</button>
         
-        <button class="Botao Botao5" onclick="comandoCor(0, 'B')">B</button>
-        <button class="Botao Botao6" onclick="comandoCor(1, 'B')">B</button>
+        <button class="Botao Botao5" onclick="comandoCor(0, 'B');verificaVitoria();">B</button>
+        <button class="Botao Botao6" onclick="comandoCor(1, 'B');verificaVitoria();">B</button>
         
-        <button class="Botao Botao7" onclick="comandoCor(0, 'C')">C</button>
-        <button class="Botao Botao8" onclick="comandoCor(1, 'C')">C</button>
+        <button class="Botao Botao7" onclick="comandoCor(0, 'C');verificaVitoria();">C</button>
+        <button class="Botao Botao8" onclick="comandoCor(1, 'C');verificaVitoria();">C</button>
         
-        <button class="Botao Botao9" onclick="comandoCor(0, 'F')">F</button>
-        <button class="Botao Botao10" onclick="comandoCor(1, 'F')">F</button>
+        <button class="Botao Botao9" onclick="comandoCor(0, 'F');verificaVitoria();">F</button>
+        <button class="Botao Botao10" onclick="comandoCor(1, 'F');verificaVitoria();">F</button>
         
-        <button class="Botao Botao11" onclick="comandoCor(0, 'D')">D</button>
-        <button class="Botao Botao12" onclick="comandoCor(1, 'D')">D</button>
-<!-- PRECISA ARRUMAR ESTES BOTOES vvv -->
-        <button class="Botao Botao13" onclick="comandoCor(0, 'G')">C</button>
-        <button class="Botao Botao14" onclick="comandoCor(1, 'G')">C</button>
+        <button class="Botao Botao11" onclick="comandoCor(0, 'D');verificaVitoria();">D</button>
+        <button class="Botao Botao12" onclick="comandoCor(1, 'D');verificaVitoria();">D</button>
+ 
+        <button class="Botao Botao13" onclick="comandoCor(0, 'G');verificaVitoria();">C</button>
+        <button class="Botao Botao14" onclick="comandoCor(1, 'G');verificaVitoria();">C</button>
         
-        <button class="Botao Botao15" onclick="comandoCor(0, 'H')">F</button>
-        <button class="Botao Botao16" onclick="comandoCor(1, 'H')">F</button>
+        <button class="Botao Botao15" onclick="comandoCor(0, 'H');verificaVitoria();">F</button>
+        <button class="Botao Botao16" onclick="comandoCor(1, 'H');verificaVitoria();">F</button>
         
-        <button class="Botao Botao17" onclick="comandoCor(0, 'I')">D</button>
-        <button class="Botao Botao18" onclick="comandoCor(1, 'I')">D</button>
+        <button class="Botao Botao17" onclick="comandoCor(0, 'I');verificaVitoria();">D</button>
+        <button class="Botao Botao18" onclick="comandoCor(1, 'I');verificaVitoria();">D</button>
         
         <div class="Face1">
             <div id="A1" class="FormatoFace1"></div>
@@ -83,27 +85,7 @@
         </div>
 
     </div>
-    
-    <div class="Cubo2">
-        <!-- primeiro parametro é sentido do giro(horario anti horario)/ do 2° ao 5° parametro é as facinhas da face principal/ da 6° em diante é as faces laterais -->
-        <button class="Botao Botao1" onclick="comandoCor(0, 1)"></button>
-        <button class="Botao Botao2" onclick="comandoCor(1, 1)"></button>
-        
-        <button class="Botao Botao3" onclick="comandoCor(0, 2)"></button>
-        <button class="Botao Botao4" onclick="comandoCor(1, 2)"></button>
-        
-        <button class="Botao Botao5" onclick="comandoCor(0, 3)"></button>
-        <button class="Botao Botao6" onclick="comandoCor(1, 3)"></button>
-        
-        <button class="Botao Botao7" onclick="comandoCor(0, 4)"></button>
-        <button class="Botao Botao8" onclick="comandoCor(1, 4)"></button>
-        
-        <button class="Botao Botao9" onclick="comandoCor(0, 5)"></button>
-        <button class="Botao Botao10" onclick="comandoCor(1, 5)"></button>
-        
-        <button class="Botao Botao11" onclick="comandoCor(0, 6)"></button>
-        <button class="Botao Botao12" onclick="comandoCor(1, 6)"></button>
-        
+    <div id="Cubo2" class="Cubo2">
         <div class="Face1">
             <div id="D1" class="FormatoFace1"></div>
             <div id="D2" class="FormatoFace1"></div>

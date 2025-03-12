@@ -1,17 +1,13 @@
 // #region Define Cor das faces
 let letras = "ABCDEF";
+let letrasComandos = "ABCDEFGHI";
 
 for (let i = 0; i < 6; i++) {  // i<6 porque são 6 lados do cubo
     for (let j = 1; j < 10; j++) {  //  j<10 porque são 9 faces de cada lado do cubo
         let id = `${letras[i]}${j}`;
         let elemento = document.getElementById(id);
         if (i == 0) {
-            if(j==1){
-                elemento.style.backgroundColor = 'black';
-            }
-            else{
-                elemento.style.backgroundColor = 'red';
-            }
+            elemento.style.backgroundColor = 'red';
         }
         else{
             if (i==1) {
@@ -169,13 +165,67 @@ function esperar(ms) {
 }
 
 async function embaralha() {
+    tiraMenu();
     let i = 0;
     while (i < 30) {
         const x = Math.floor(Math.random() * 2);
-        const y = Math.floor(Math.random() * 6) + 1;
-        console.log(i);
-        comandoCor(x, y);
+        const y = Math.floor(Math.random() * 9);
+        comandoCor(x, letrasComandos[y]);
         i++;
         await esperar(50); // Espera 1 segundo antes de continuar
+    }
+}
+
+function tiraMenu(){
+    document.getElementById('bannerId').classList.add('bannerNone');
+}
+function colocaMenu(){
+    document.getElementById('bannerId').classList.remove('bannerNone');
+}
+
+function verificaVitoria(){
+    let vitoria = 0;
+    outerLoop:
+    for (let i = 0; i < 6; i++)
+    {
+        let id1 = `${letras[i]}1`;
+        let faceTeste = document.getElementById(id1);
+        let corTeste = faceTeste.style.backgroundColor;
+        console.log(corTeste);
+
+        for (let j = 1; j < 10; j++){
+            let id = `${letras[i]}${j}`;
+            let elemento = document.getElementById(id);
+            if(elemento.style.backgroundColor == corTeste){
+                vitoria++;
+                console.log(vitoria);
+            }
+            else{
+                break outerLoop;
+            }
+        }
+    }
+    if(vitoria>=54){
+        colocaMenu();
+    }
+}
+
+function tela(){
+    let largura = window.innerWidth;
+    let altura = window.innerHeight;
+    let cubo = document.getElementById("Cubo");
+    let cubo2 = document.getElementById("Cubo2");
+    if (altura > largura){
+        
+        cubo.classList.add('CuboVertical');
+        cubo.classList.remove('Cubo');
+        cubo2.classList.add('Cubo2Vertical');
+        cubo2.classList.remove('Cubo2');
+    }
+    else{
+        cubo.classList.add('Cubo');
+        cubo.classList.remove('CuboVertical');
+        cubo2.classList.add('Cubo2');
+        cubo2.classList.remove('CuboVertical2');
     }
 }
